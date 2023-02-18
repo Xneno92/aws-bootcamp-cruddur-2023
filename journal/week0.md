@@ -4,4 +4,4 @@
 
 ### Recreate Conceptual Diagram in Lucid Charts or on a Napkin
 
-![Conceptual Diagram](assets/Logical Diagram.png)
+![Conceptual Diagram](assets/Conceptual_Diagram.png)
