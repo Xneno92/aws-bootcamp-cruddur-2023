@@ -2,6 +2,7 @@
 vscode:
   extensions:
     - 42Crunch.vscode-openapi
+    - cweijan.vscode-postgresql-client2
 
 tasks:
   - name: aws-cli
@@ -19,3 +20,4 @@ tasks:
       echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
       sudo apt update
       sudo apt install -y postgresql-client-13 libpq-dev    
+  
