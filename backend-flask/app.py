@@ -22,6 +22,15 @@ from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
 ############################
 
+
+
+# Initialize tracing and an exporter that can send data to Honeycomb
+provider = TracerProvider()
+processor = BatchSpanProcessor(OTLPSpanExporter())
+provider.add_span_processor(processor)
+trace.set_tracer_provider(provider)
+tracer = trace.get_tracer(__name__)
+
 app = Flask(__name__)
 #honey comb
 # Initialize automatic instrumentation with Flask
@@ -39,12 +48,6 @@ cors = CORS(
   methods="OPTIONS,GET,HEAD,POST"
 )
 
-# Initialize tracing and an exporter that can send data to Honeycomb
-provider = TracerProvider()
-processor = BatchSpanProcessor(OTLPSpanExporter())
-provider.add_span_processor(processor)
-trace.set_tracer_provider(provider)
-tracer = trace.get_tracer(__name__)
 
 @app.route("/api/message_groups", methods=['GET'])
 def data_message_groups():
