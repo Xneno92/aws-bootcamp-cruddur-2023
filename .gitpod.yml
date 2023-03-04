@@ -15,7 +15,7 @@ tasks:
       cd $THEIA_WORKSPACE_ROOT
   - name: react-react-js
     init: |
-      cd frontend-react-react-js
+      cd frontend-react-js
       npm install
   - name: postgres
     init: |
